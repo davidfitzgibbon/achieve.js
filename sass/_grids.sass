@@ -1,0 +1,20 @@
+/* new and experimental, based almost completely on the brilliant @dbushell's : http://dbushell.com/2013/03/19/on-responsive-layout-and-grids/  */
+/* the idea here is creating components. For a clearer explanation check out @davatron5000's : http://daverupert.com/2013/04/responsive-deliverables/
+
+/* THIS IS YOUR BASIC SETUP, PROBABLY DONT CHANGE THIS STUFF */
+.grid
+	+clearfix 
+	margin: 0 -1.5em
+
+.unit
+	display: block
+	float: left
+	padding: 0 1.5em
+	width: 100%
+
+/* HERE IS WHERE YOU CREATE YOUR COMPONENETS */
+
+/* HALVSIES */
+.halvsies .unit
+	@media (min-width: 34em)
+		width: 50%

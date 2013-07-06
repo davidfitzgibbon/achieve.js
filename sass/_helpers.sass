@@ -1,0 +1,86 @@
+/* EM CALCULATOR */
+@function em($target, $context:$fs)
+	@if $target == 0 
+		@return 0
+	@return $target / $context + 0em
+
+/* REM CALCULATOR - Chris Coyer - http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/ */
+/* Didnt like Chris' implementation so made some changes */
+/* Simply set the font size like +fs(24) for 24px letters */
+@mixin fs($sizeValue: 1.6)
+	font-size: ($sizeValue ) + px
+	font-size: ($sizeValue / 10) + rem
+
+/* BOILERPLATE HELPERS */
+@mixin hidden
+	display: none !important
+	visibility: hidden
+
+@mixin visuallyhidden
+	border: 0
+	clip: rect(0 0 0 0)
+	height: 1px
+	margin: -1px
+	overflow: hidden
+	padding: 0
+	position: absolute
+	width: 1px
+
+	.focusable:active, .focusable:focus
+		clip: auto
+		height: auto
+		margin: 0
+		overflow: visible
+		position: static
+		width: auto
+
+@mixin invisible
+	visibility: hidden
+
+@mixin simple-link($default, $hover)
+	+link-colors($default, $hover, $default, $default, $default)
+
+@mixin link-under($color)
+	+link-colors($color, $color, $color, $color, $color)
+	text-decoration: underline
+	&:hover
+		text-decoration: none
+
+@mixin link-over($color)
+	+link-colors($color, $color, $color, $color, $color)
+	text-decoration: none
+	&:hover
+		text-decoration: underline
+
+/* based on Harry Roberts island object: http://csswizardry.com/2011/10/the-island-object/ */
+@mixin island($distance: $lh)
+	margin-bottom: $distance
+
+	> :last-child
+		margin-bottom: 0
+.island
+	+island
+
+@mixin border-box
+	-moz-box-sizing: border-box
+	-webkit-box-sizing: border-box
+	box-sizing: border-box
+
+.left
+	float: left
+
+.right
+	float: right
+
+em
+	font-weight: bold
+
+.honey
+	+visuallyhidden
+
+label, input[type="submit"]
+	cursor: pointer
+
+button, input, select, textarea
+	vertical-align: baseline
+	*vertical-align: middle

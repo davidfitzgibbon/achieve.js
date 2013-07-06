@@ -1,0 +1,335 @@
+/* COLORS */
+$green: #6ca86c
+$grey: #586464
+$grey-dark: darken($grey, 5%)
+$black: #010302
+
+/* FONT SETTINGS */
+$fs: 16px
+$lh: 24px
+
+@import 'includes'
+
+@mixin sans
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+
+body
+	background: $green
+
+#achievementsContainer
+	position: fixed
+	bottom: 30px
+	left: 50%
+	margin-left: -180px
+	width: 360px
+
+.achievement
+	+border-box
+
+	display: block
+	position: relative
+	float: left
+	width: 100%
+	height: 68px
+
+	margin-bottom: 5px
+
+	color: white
+
+	font-size: 16px
+	font-family: sans-serif
+	padding: 9px 10px 5px
+
+	// anim
+	opacity: 0
+	-webkit-animation: achievement 6s
+	-moz-animation: achievement 6s
+	-o-animation: achievement 6s
+	animation: achievement 6s
+
+	.background
+		width: 100%
+		height: 100%
+		background: $grey
+		border-radius: 100px
+		border: 1px solid $grey-dark
+		box-shadow: 0 0 10px rgba(255,255,255,0.5)
+		position: absolute
+		top: 0
+		left: 0
+		z-index: 1
+
+		// anim
+		-webkit-animation: bg 1s
+		-moz-animation: bg 1s
+		-o-animation: bg 1s
+		animation: bg 1s
+	
+	img
+		position: absolute
+		top: 6px
+		left: 6px
+		z-index: 2
+
+		&.xbox
+			// anim
+			-webkit-animation: xbox 2.5s infinite
+			-moz-animation: xbox 2.5s infinite
+			-o-animation: xbox 2.5s infinite
+			animation: xbox 2.5s infinite
+
+		&.trophy
+			// anim
+			-webkit-animation: trophy 2.5s infinite
+			-moz-animation: trophy 2.5s infinite
+			-o-animation: trophy 2.5s infinite
+			animation: trophy 2.5s infinite
+
+		
+	span
+		display: block
+		position: relative
+		margin-left: 72px
+		float: left
+		width: 100%
+		line-height: 25px
+		z-index: 3
+
+		-webkit-animation: text 1.5s
+		-moz-animation: text 1.5s
+		-o-animation: text 1.5s
+		animation: text 1.5s
+
+		&.message
+			text-transform: capitalize
+
+// ANIMATIONS
+
+// ACHIEVEMENT
+@-webkit-keyframes achievement 
+	0%   
+		opacity: 0
+		display: block
+	10%
+		opacity: 1
+	90%
+		opacity: 1
+	100%
+		opacity: 0
+		display: none
+
+@-moz-keyframes achievement 
+	0%   
+		opacity: 0
+		display: block
+	10%
+		opacity: 1
+	90%
+		opacity: 1
+	100%
+		opacity: 0
+		display: none
+
+@-o-keyframes achievement 
+	0%   
+		opacity: 0
+		display: block
+	10%
+		opacity: 1
+	90%
+		opacity: 1
+	100%
+		opacity: 0
+		display: none
+
+@keyframes achievement 
+	0%   
+		opacity: 0
+		display: block
+	10%
+		opacity: 1
+	90%
+		opacity: 1
+	100%
+		opacity: 0
+		display: none
+
+// bg
+@-webkit-keyframes bg 
+	0%   
+		opacity: 0
+		width: 0px
+	100%
+		opacity: 1
+		width: 100%
+
+@-moz-keyframes bg 
+	0%   
+		opacity: 0
+		width: 0px
+	100%
+		opacity: 1
+		width: 100%
+
+@-o-keyframes bg 
+	0%   
+		opacity: 0
+		width: 0px
+	100%
+		opacity: 1
+		width: 100%
+
+@keyframes bg 
+	0%   
+		opacity: 0
+		width: 0px
+	100%
+		opacity: 1
+		width: 100%
+
+// text
+@-webkit-keyframes text 
+	0%   
+		opacity: 0
+	50%
+		opacity: 0
+	100%
+		opacity: 1
+
+@-moz-keyframes text 
+	0%   
+		opacity: 0
+	50%
+		opacity: 0
+	100%
+		opacity: 1
+
+@-o-keyframes text 
+	0%   
+		opacity: 0
+	50%
+		opacity: 0
+	100%
+		opacity: 1
+
+@keyframes text 
+	0%   
+		opacity: 0
+	50%
+		opacity: 0
+	100%
+		opacity: 1
+
+// xbox
+@-webkit-keyframes xbox 
+	0%   
+		opacity: 0
+	2.5%
+		opacity: 0
+	10%
+		opacity: 1
+	40%
+		opacity: 1
+	47.5%
+		opacity: 0
+	100%
+		opacity: 0
+
+@-moz-keyframes xbox 
+	0%   
+		opacity: 0
+	2.5%
+		opacity: 0
+	10%
+		opacity: 1
+	40%
+		opacity: 1
+	47.5%
+		opacity: 0
+	100%
+		opacity: 0
+
+@-o-keyframes xbox 
+	0%   
+		opacity: 0
+	2.5%
+		opacity: 0
+	10%
+		opacity: 1
+	40%
+		opacity: 1
+	47.5%
+		opacity: 0
+	100%
+		opacity: 0
+
+@keyframes xbox 
+	0%   
+		opacity: 0
+	2.5%
+		opacity: 0
+	10%
+		opacity: 1
+	40%
+		opacity: 1
+	47.5%
+		opacity: 0
+	100%
+		opacity: 0
+
+// trophy
+@-webkit-keyframes trophy 
+	0%   
+		opacity: 0
+	50%
+		opacity: 0
+	52.5%
+		opacity: 1
+	90%
+		opacity: 1
+	97.5%
+		opacity: 0
+	100%
+		opacity: 0
+
+@-moz-keyframes trophy 
+	0%   
+		opacity: 0
+	50%
+		opacity: 0
+	52.5%
+		opacity: 1
+	90%
+		opacity: 1
+	97.5%
+		opacity: 0
+	100%
+		opacity: 0
+
+@-o-keyframes trophy 
+	0%   
+		opacity: 0
+	50%
+		opacity: 0
+	52.5%
+		opacity: 1
+	90%
+		opacity: 1
+	97.5%
+		opacity: 0
+	100%
+		opacity: 0
+
+@keyframes trophy 
+	0%   
+		opacity: 0
+	50%
+		opacity: 0
+	52.5%
+		opacity: 1
+	90%
+		opacity: 1
+	97.5%
+		opacity: 0
+	100%
+		opacity: 0
